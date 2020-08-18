@@ -102,10 +102,20 @@ public class Player : MonoBehaviour
                         if (collidableObject.GetComponent<Log>().moveRight)
                         {
                             playerPos.x += collidableObject.GetComponent<Log>().moveSpeed * Time.deltaTime;
+
+                            if (transform.position.x >= 9.5)
+                            {
+                                playerPos.x = transform.position.x - 18f;
+                            }
                         }
                         else
                         {
                             playerPos.x -= collidableObject.GetComponent<Log>().moveSpeed * Time.deltaTime;
+
+                            if (transform.position.x <= -9.5)
+                            {
+                                playerPos.x = transform.position.x + 18f;
+                            }
                         }
 
                         transform.position = playerPos;
