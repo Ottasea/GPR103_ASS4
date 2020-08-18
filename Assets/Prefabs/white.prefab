@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: -1
-  speed: 0
+  speed: 4
   startingPosition: {x: 10, y: -1}
   endPosition: {x: -10, y: -1}
   paused: 1

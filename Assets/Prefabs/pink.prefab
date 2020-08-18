@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: 1
-  speed: 5
+  speed: 6
   startingPosition: {x: -10, y: -2}
   endPosition: {x: 10, y: -2}
   paused: 1
