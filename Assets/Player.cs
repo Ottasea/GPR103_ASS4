@@ -111,6 +111,8 @@ public class Player : MonoBehaviour
                         transform.position = playerPos;
 
                     }
+                    
+                    break;
                 }
                 else
                 {
