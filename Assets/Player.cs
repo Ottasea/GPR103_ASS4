@@ -37,13 +37,13 @@ public class Player : MonoBehaviour
     {
         Vector2 playerPos = transform.position;
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && playerCanMove == true)
         {
             GetComponent<SpriteRenderer>().sprite = playerUp;
             
             playerPos += Vector2.up;
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S) && playerCanMove == true)
         {
             GetComponent<SpriteRenderer>().sprite = playerDown;
             
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
                 
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A) && playerCanMove == true)
         {
             GetComponent<SpriteRenderer>().sprite = playerLeft;
 
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
             }
             
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D) && playerCanMove == true)
         {
             GetComponent<SpriteRenderer>().sprite = playerRight;
             if (playerPos.x < myGameManager.levelConstraintRight)
