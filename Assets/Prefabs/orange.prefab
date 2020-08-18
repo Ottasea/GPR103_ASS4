@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 819205156815618228}
   - component: {fileID: 819205156815618229}
   - component: {fileID: 4677100891228030083}
-  - component: {fileID: 5854891480620327973}
+  - component: {fileID: 1928544878590986803}
   m_Layer: 0
   m_Name: orange
   m_TagString: unsafe
@@ -101,29 +101,15 @@ MonoBehaviour:
   endPosition: {x: -10, y: -5}
   paused: 1
   runTime: 0
---- !u!61 &5854891480620327973
-BoxCollider2D:
+--- !u!114 &1928544878590986803
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819205156815618231}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.029364586}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.51059914}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

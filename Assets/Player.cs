@@ -9,7 +9,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public string playerName = ""; //The players name for the purpose of storing the high score
-   
+
     public int playerTotalLives; //Players total possible lives.
     public int playerLivesRemaining; //Players actual lives remaining.
     public bool playerIsAlive = true; //Is the player currently alive?
@@ -18,12 +18,12 @@ public class Player : MonoBehaviour
 
     private GameManager myGameManager; //A reference to the GameManager in the scene.
     public GameObject gameManager; //Allows you to determine the GameManager that oversees the Player
-    private Vector2 startPosition;
+    private Vector2 startPos; //Where is the player on game start?
 
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.localPosition;
+        startPos = transform.localPosition;
         myGameManager = gameManager.GetComponent<GameManager>();
     }
 
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         UpdatePosition();
+        CheckCollisions();
     }
 
     private void UpdatePosition()
@@ -40,19 +41,19 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && playerCanMove == true)
         {
             GetComponent<SpriteRenderer>().sprite = playerUp;
-            
+
             playerPos += Vector2.up;
         }
         else if (Input.GetKeyDown(KeyCode.S) && playerCanMove == true)
         {
             GetComponent<SpriteRenderer>().sprite = playerDown;
-            
+
             if (playerPos.y > myGameManager.levelConstraintBottom)
             {
                 playerPos += Vector2.down;
             }
 
-                
+
         }
         else if (Input.GetKeyDown(KeyCode.A) && playerCanMove == true)
         {
@@ -62,7 +63,7 @@ public class Player : MonoBehaviour
             {
                 playerPos += Vector2.left;
             }
-            
+
         }
         else if (Input.GetKeyDown(KeyCode.D) && playerCanMove == true)
         {
@@ -76,19 +77,55 @@ public class Player : MonoBehaviour
         transform.position = playerPos;
     }
 
-    void OnCollisionEnter2D (Collision2D other)
+    private void CheckCollisions()
     {
-        if (other.gameObject.tag == "safe")
+        bool isSafe = true;
+
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("CollidableObject"); //Finds all the game objects in the scene with a certain tag and creates an array with them
+
+        foreach (GameObject go in gameObjects)
         {
-            Debug.Log("SAFE");
+            CollidableObject collidableObject = go.GetComponent<CollidableObject>();
+
+            if (collidableObject.IsColliding(this.gameObject))
+            {
+                if(collidableObject.isSafe)
+                {
+                    isSafe = true;
+
+                    Debug.Log("SAFE");
+
+                    if (collidableObject.isLog)
+                    {
+                        Vector2 playerPos = transform.position;
+
+                        if (collidableObject.GetComponent<Log>().moveRight)
+                        {
+                            playerPos.x += collidableObject.GetComponent<Log>().moveSpeed * Time.deltaTime;
+                        }
+                        else
+                        {
+                            playerPos.x -= collidableObject.GetComponent<Log>().moveSpeed * Time.deltaTime;
+                        }
+
+                        transform.position = playerPos;
+
+                    }
+                }
+                else
+                {
+                    isSafe = false;
+                }
+            }
         }
 
-        else if (other.gameObject.tag == "unsafe")
+        if (!isSafe)
         {
-            Debug.Log("UNSAFE");
-            transform.localPosition = startPosition;
+            transform.position = startPos;
             transform.GetComponent<SpriteRenderer>().sprite = playerUp;
         }
-    }
 
+
+
+    }
 }
