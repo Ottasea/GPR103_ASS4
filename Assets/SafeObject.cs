@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Log : MonoBehaviour
+public class SafeObject : MonoBehaviour
 {
     /*Following code is from The Weekly Coder youtube channel, where I also originally found the assets to use. I liked that it provided
      a nice seamless looping of the logs as opposed to what I had set up for the vehicles (which also worked for this) */
@@ -15,10 +15,10 @@ public class Log : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveLog(); //Has the log reached the determined width? If so, move it back to its start position
+        MoveSafeObject(); //Has the safe object reached the determined width? If so, move it back to its start position
     }
     
-    void MoveLog()
+    void MoveSafeObject()
     {
         Vector2 pos = transform.localPosition;
 
@@ -44,5 +44,5 @@ public class Log : MonoBehaviour
         transform.localPosition = pos;
     }
     
-    }
+}
 

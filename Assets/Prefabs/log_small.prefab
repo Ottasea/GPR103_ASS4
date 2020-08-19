@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 270236489264478762}
   m_Layer: 0
   m_Name: log_small
-  m_TagString: log
+  m_TagString: CollidableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSafe: 1
+  isSafeObject: 1

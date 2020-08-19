@@ -95,13 +95,13 @@ public class Player : MonoBehaviour
 
                     Debug.Log("SAFE");
 
-                    if (collidableObject.isLog)
+                    if (collidableObject.isSafeObject)
                     {
                         Vector2 playerPos = transform.position;
 
-                        if (collidableObject.GetComponent<Log>().moveRight)
+                        if (collidableObject.GetComponent<SafeObject>().moveRight)
                         {
-                            playerPos.x += collidableObject.GetComponent<Log>().moveSpeed * Time.deltaTime;
+                            playerPos.x += collidableObject.GetComponent<SafeObject>().moveSpeed * Time.deltaTime;
 
                             if (transform.position.x >= 9.5)
                             {
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
                         }
                         else
                         {
-                            playerPos.x -= collidableObject.GetComponent<Log>().moveSpeed * Time.deltaTime;
+                            playerPos.x -= collidableObject.GetComponent<SafeObject>().moveSpeed * Time.deltaTime;
 
                             if (transform.position.x <= -9.5)
                             {
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
 
                         transform.position = playerPos;
 
-                    }
+                    } 
                     
                     break;
                 }

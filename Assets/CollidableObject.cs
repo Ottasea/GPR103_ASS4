@@ -17,7 +17,7 @@ public class CollidableObject : MonoBehaviour
     Vector2 collidableObjectPosition; //Position of the collidable object
 
     public bool isSafe;
-    public bool isLog;
+    public bool isSafeObject;
     
     public bool IsColliding (GameObject playerGameObject)
     {
