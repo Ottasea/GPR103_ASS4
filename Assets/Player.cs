@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     {
         startPos = transform.localPosition;
         myGameManager = gameManager.GetComponent<GameManager>();
+        playerLivesRemaining = playerTotalLives;
     }
 
     // Update is called once per frame
@@ -133,11 +134,32 @@ public class Player : MonoBehaviour
 
         if (!isSafe)
         {
-            transform.position = startPos;
-            transform.GetComponent<SpriteRenderer>().sprite = playerUp;
+            if (playerLivesRemaining == 0)
+            {
+                GameOver();
+            } 
+            else
+            {
+                OnPlayerDeath();
+            }
         }
+    }
 
+    void GameOver()
+    {
+        playerLivesRemaining = playerTotalLives;
+        ResetPosition();
+    }
 
+    void OnPlayerDeath ()
+    {
+        playerLivesRemaining -= 1;
+        ResetPosition();
+    }
 
+    void ResetPosition ()
+    {
+        transform.position = startPos;
+        transform.GetComponent<SpriteRenderer>().sprite = playerUp;
     }
 }
