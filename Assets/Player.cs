@@ -12,9 +12,15 @@ public class Player : MonoBehaviour
 
     public int playerTotalLives; //Players total possible lives.
     public int playerLivesRemaining; //Players actual lives remaining.
+    
     public bool playerIsAlive = true; //Is the player currently alive?
     public bool playerCanMove = false; //Can the player currently move?
+    
     public Sprite playerUp, playerDown, playerLeft, playerRight; //Select how the player looks based on the direction its travelling.
+
+    public AudioClip hopSound;
+    public AudioClip squashSound;
+    public AudioClip homeBaseSound;
 
     public GameManager myGameManager; //A reference to the GameManager in the scene.
     private Vector2 startPos; //Where is the player on game start?
@@ -44,6 +50,8 @@ public class Player : MonoBehaviour
             playerPos += Vector2.up;
 
             myGameManager.UpdatePlayerScore(10);
+
+            PlayHopSound();
         }
         else if (Input.GetKeyDown(KeyCode.S) && playerCanMove == true)
         {
@@ -52,6 +60,8 @@ public class Player : MonoBehaviour
             if (playerPos.y > myGameManager.levelConstraintBottom)
             {
                 playerPos += Vector2.down;
+
+                PlayHopSound();
             }
 
 
@@ -63,6 +73,8 @@ public class Player : MonoBehaviour
             if (playerPos.x > myGameManager.levelConstraintLeft)
             {
                 playerPos += Vector2.left;
+
+                PlayHopSound();
             }
 
         }
@@ -72,6 +84,8 @@ public class Player : MonoBehaviour
             if (playerPos.x < myGameManager.levelConstraintRight)
             {
                 playerPos += Vector2.right;
+
+                PlayHopSound();
             }
         }
 
@@ -93,8 +107,6 @@ public class Player : MonoBehaviour
                 if(collidableObject.isSafe)
                 {
                     isSafe = true;
-
-                    Debug.Log("SAFE");
 
                     if (collidableObject.isSafeObject)
                     {
@@ -130,19 +142,22 @@ public class Player : MonoBehaviour
 
                             collidableObject.hasTrophy = true;
 
+                            PlayHomeBaseSound();
+
                             myGameManager.UpdatePlayerScore(50);
 
                             collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBase;
 
                             int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
 
-                            myGameManager.UpdatePlayerScore(leftOverTime * 10);
+                            myGameManager.UpdatePlayerScore(leftOverTime * 20);
 
                             ResetPosition();
 
                             myGameManager.ResetTimer();
                         }
 
+                        PlayHomeBaseSound();
                         ResetPosition();
                     }
 
@@ -177,6 +192,7 @@ public class Player : MonoBehaviour
 
     public void OnPlayerDeath ()
     {
+        PlaySquashedSound();
         myGameManager.ResetTimer();
         LoseLife();
         ResetPosition();
@@ -191,5 +207,20 @@ public class Player : MonoBehaviour
     public void LoseLife()
     {
         playerLivesRemaining -= 1;
+    }
+
+    public void PlayHopSound()
+    {
+        AudioSource.PlayClipAtPoint(hopSound, transform.position);
+    }
+
+    public void PlaySquashedSound()
+    {
+        AudioSource.PlayClipAtPoint(squashSound, transform.position);
+    }
+
+    public void PlayHomeBaseSound()
+    {
+        AudioSource.PlayClipAtPoint(homeBaseSound, transform.position);
     }
 }
