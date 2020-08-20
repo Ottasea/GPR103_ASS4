@@ -14,6 +14,13 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public Text highScoreText;
 
+    public Text winText;
+    public Text winSubText;
+
+    public Text gameOverText;
+    public Text gameOverSubText;
+    public Text startGameText;
+
    
 
     [Header("Playable Area")]
@@ -29,8 +36,6 @@ public class GameManager : MonoBehaviour
     public float timeWarning; //The point in time when the player is alerted that they are almost out of time.
     public float gameTimeRemaining; //The current elapsed time.
 
-    public Text startGameText;
-    public Text gameOverText;
     
     public Image timer;
     private Vector3 startTimerScale;
@@ -51,6 +56,7 @@ public class GameManager : MonoBehaviour
 
         GameReset();
 
+        HideWin();
 
     }
 
@@ -154,6 +160,8 @@ public class GameManager : MonoBehaviour
                 myPlayer.GetComponent<SpriteRenderer>().enabled = true;
 
                 ResetPlayerScore();
+
+                startGameText.enabled = false;
             }
         }
         
@@ -173,5 +181,33 @@ public class GameManager : MonoBehaviour
 
         ResetTimer();
 
+        startGameText.enabled = true;
+
+        gameOverText.enabled = false;
+
+    }
+
+    public void ShowWin()
+    {
+        winText.enabled = true;
+        winSubText.enabled = true;
+    }
+
+    public void HideWin()
+    {
+        winText.enabled = false;
+        winSubText.enabled = false;
+    }
+
+    public void ShowGameOver()
+    {
+        gameOverText.enabled = true;
+        gameOverSubText.enabled = true;
+    }
+
+    public void HideGameOver()
+    {
+        gameOverText.enabled = false;
+        gameOverSubText.enabled = false;
     }
 }

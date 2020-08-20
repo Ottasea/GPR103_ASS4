@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This script must be used as the core Player script for managing the player character in the game.
@@ -14,14 +12,16 @@ public class Player : MonoBehaviour
 
     public int playerTotalLives; //Players total possible lives.
     public int playerLivesRemaining; //Players actual lives remaining.
+  
 
     public int maxY = 0, currentY = 1;
 
     public int frogsAtHome = 0;
-    public Text youWinText;
 
+    private bool gameWon = false;
 
     public bool playerCanMove = false; //Can the player currently move?
+    public bool playerIsAlive = true; //Is the player alive?
     
     public Sprite playerUp, playerDown, playerLeft, playerRight; //Select how the player looks based on the direction its travelling.
 
@@ -36,10 +36,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         startPos = transform.localPosition;
-        playerLivesRemaining = playerTotalLives;
-        youWinText.enabled = false;
-
         
+        playerLivesRemaining = playerTotalLives;       
     }
 
     // Update is called once per frame
@@ -47,67 +45,75 @@ public class Player : MonoBehaviour
     {
         UpdatePosition();
         CheckCollisions();
+        CheckPlayAgain();
     }
 
     private void UpdatePosition()
     {
-        Vector2 playerPos = transform.position;
-
-        if (Input.GetKeyDown(KeyCode.W) && playerCanMove == true)
+        if (!gameWon || playerIsAlive == true)
         {
-            GetComponent<SpriteRenderer>().sprite = playerUp;
-
-            playerPos += Vector2.up;
-
-            if (currentY > maxY) //Will only give the player points if they have move forward passed their previous Y position (Y position resets on death and making it to a home base)
+            if (playerCanMove == true)
             {
-                maxY = currentY;
-                myGameManager.UpdatePlayerScore(10);
+                Vector2 playerPos = transform.position;
+
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    GetComponent<SpriteRenderer>().sprite = playerUp;
+
+                    playerPos += Vector2.up;
+
+                    if (currentY > maxY) //Will only give the player points if they have move forward passed their previous Y position (Y position resets on death and making it to a home base)
+                    {
+                        maxY = currentY;
+                        myGameManager.UpdatePlayerScore(10);
+                    }
+
+                    currentY++;
+
+                    PlayHopSound();
+                }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    GetComponent<SpriteRenderer>().sprite = playerDown;
+
+                    if (playerPos.y > myGameManager.levelConstraintBottom)
+                    {
+                        playerPos += Vector2.down;
+
+                        currentY--;
+
+                        PlayHopSound();
+                    }
+
+
+                }
+                else if (Input.GetKeyDown(KeyCode.A))
+                {
+                    GetComponent<SpriteRenderer>().sprite = playerLeft;
+
+                    if (playerPos.x > myGameManager.levelConstraintLeft)
+                    {
+                        playerPos += Vector2.left;
+
+                        PlayHopSound();
+                    }
+
+                }
+                else if (Input.GetKeyDown(KeyCode.D))
+                {
+                    GetComponent<SpriteRenderer>().sprite = playerRight;
+                    if (playerPos.x < myGameManager.levelConstraintRight)
+                    {
+                        playerPos += Vector2.right;
+
+                        PlayHopSound();
+                    }
+                }
+                transform.position = playerPos;
             }
             
-            currentY++;
-
-            PlayHopSound();
         }
-        else if (Input.GetKeyDown(KeyCode.S) && playerCanMove == true)
-        {
-            GetComponent<SpriteRenderer>().sprite = playerDown;
-
-            if (playerPos.y > myGameManager.levelConstraintBottom)
-            {
-                playerPos += Vector2.down;
-
-                currentY--;
-
-                PlayHopSound();
-            }
-
-
-        }
-        else if (Input.GetKeyDown(KeyCode.A) && playerCanMove == true)
-        {
-            GetComponent<SpriteRenderer>().sprite = playerLeft;
-
-            if (playerPos.x > myGameManager.levelConstraintLeft)
-            {
-                playerPos += Vector2.left;
-
-                PlayHopSound();
-            }
-
-        }
-        else if (Input.GetKeyDown(KeyCode.D) && playerCanMove == true)
-        {
-            GetComponent<SpriteRenderer>().sprite = playerRight;
-            if (playerPos.x < myGameManager.levelConstraintRight)
-            {
-                playerPos += Vector2.right;
-
-                PlayHopSound();
-            }
-        }
-
-        transform.position = playerPos;
+        
     }
 
     private void CheckCollisions()
@@ -170,6 +176,11 @@ public class Player : MonoBehaviour
 
                             frogsAtHome++;
 
+                            if (frogsAtHome == 5)
+                            {
+                                GameWon();
+                            }
+
                             ResetPosition();
                         }
 
@@ -226,14 +237,11 @@ public class Player : MonoBehaviour
 
     public void GameOver()
     {
-
-        myGameManager.GameReset();
+        myGameManager.ShowGameOver();
         
-        playerLivesRemaining = playerTotalLives;
+        playerIsAlive = false;
 
-        ResetHomeBase();
-
-        ResetPosition();
+        GetComponent<SpriteRenderer>().enabled = false;
 
     }
 
@@ -246,29 +254,48 @@ public class Player : MonoBehaviour
         {
             CollidableObject trophyObject = trophy.GetComponent<CollidableObject>();
 
+            trophyObject.hasTrophy = false;
+
+            trophyObject.tag = "CollidableObject";
+
             trophyObject.GetComponent<SpriteRenderer>().sprite = trophyObject.homeBase;
         }
     }
 
-    public void PlayerWins()
+    public void CheckPlayAgain()
     {
-        if (frogsAtHome == 5)
+      if (gameWon == true || !playerIsAlive)
         {
-            youWinText.enabled = true;
-            
-            myGameManager.isGameRunning = false;
-
-            playerCanMove = false;
-            
-            int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
-
-            myGameManager.UpdatePlayerScore(leftOverTime * 20);
-
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 myGameManager.GameReset();
+
+                playerLivesRemaining = playerTotalLives;
+
+                ResetPosition();
+
+                gameWon = false;
+
+                playerIsAlive = true;
+
+                myGameManager.HideWin();
+
+                myGameManager.HideGameOver();
             }
         }
+    }
+
+    public void GameWon()
+    {
+        int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
+
+        myGameManager.UpdatePlayerScore(leftOverTime * 20);
+
+        myGameManager.ShowWin();
+        
+        gameWon = true;
+
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void PlayHopSound()
