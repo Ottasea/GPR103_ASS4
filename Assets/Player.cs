@@ -143,19 +143,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         playerLivesRemaining = playerTotalLives;
         ResetPosition();
     }
 
-    void OnPlayerDeath ()
+    public void OnPlayerDeath ()
     {
+        myGameManager.gameTimeRemaining = 0;
         playerLivesRemaining -= 1;
         ResetPosition();
     }
 
-    void ResetPosition ()
+    public void ResetPosition ()
     {
         transform.position = startPos;
         transform.GetComponent<SpriteRenderer>().sprite = playerUp;
