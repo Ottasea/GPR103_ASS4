@@ -398,6 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1001 &147286163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -479,7 +482,7 @@ GameObject:
   - component: {fileID: 202625156}
   - component: {fileID: 202625157}
   m_Layer: 0
-  m_Name: safe_area(4)
+  m_Name: homebase_5
   m_TagString: CollidableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -563,6 +566,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 1
   isSafeObject: 0
+  isHomeBase: 1
+  hasTrophy: 0
+  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
 --- !u!1001 &203654846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,7 +1009,7 @@ GameObject:
   - component: {fileID: 309898652}
   - component: {fileID: 309898653}
   m_Layer: 0
-  m_Name: safe_area
+  m_Name: homebase_1
   m_TagString: CollidableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1087,6 +1093,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 1
   isSafeObject: 0
+  isHomeBase: 1
+  hasTrophy: 0
+  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
 --- !u!1001 &331296517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1691,6 +1700,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1001 &548097779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1882,6 +1894,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 1
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1 &672239530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2063,7 @@ GameObject:
   - component: {fileID: 713655269}
   - component: {fileID: 713655270}
   m_Layer: 0
-  m_Name: safe_area(1)
+  m_Name: homebase_2
   m_TagString: CollidableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2132,6 +2147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 1
   isSafeObject: 0
+  isHomeBase: 1
+  hasTrophy: 0
+  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
 --- !u!1 &729180652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,6 +2251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1 &808630110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
@@ -2253,6 +2274,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1 &821124465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 219194555061866932, guid: 9e4753cc2badf64478155c50cda50740,
@@ -2273,6 +2297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1 &826150718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,6 +2396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1 &840484404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,6 +2439,7 @@ MonoBehaviour:
   timeWarning: 5
   gameTimeRemaining: 0
   timer: {fileID: 2037012593}
+  timerColor: 0
   lives:
   - {fileID: 887539843}
   - {fileID: 459756043}
@@ -2877,6 +2908,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1001 &1093860970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3239,6 +3273,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1 &1437505634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,6 +3556,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1001 &1499976661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3638,6 +3678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1001 &1562484510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3914,7 +3957,7 @@ GameObject:
   - component: {fileID: 1680151847}
   - component: {fileID: 1680151848}
   m_Layer: 0
-  m_Name: safe_area(2)
+  m_Name: homebase_3
   m_TagString: CollidableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3998,6 +4041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 1
   isSafeObject: 0
+  isHomeBase: 1
+  hasTrophy: 0
+  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
 --- !u!1 &1726697298 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 819205156815618231, guid: eaf15b201bc0def428817966f5f7e9f2,
@@ -4018,6 +4064,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1001 &1736004621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4421,7 +4470,7 @@ GameObject:
   - component: {fileID: 2017904110}
   - component: {fileID: 2017904111}
   m_Layer: 0
-  m_Name: safe_area(3)
+  m_Name: homebase_4
   m_TagString: CollidableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4505,6 +4554,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 1
   isSafeObject: 0
+  isHomeBase: 1
+  hasTrophy: 0
+  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
 --- !u!1 &2037012591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,6 +4794,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSafe: 0
   isSafeObject: 0
+  isHomeBase: 0
+  hasTrophy: 0
+  trophyBase: {fileID: 0}
 --- !u!1001 &819205155130060574
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -120,6 +120,24 @@ public class Player : MonoBehaviour
                         transform.position = playerPos;
 
                     } 
+
+                    if (collidableObject.isHomeBase)
+                    {
+                        if (!collidableObject.hasTrophy)
+                        {
+
+                            collidableObject.hasTrophy = true;
+
+                            collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBase;
+
+                            ResetPosition();
+
+                            myGameManager.ResetTimer();
+                        }
+
+                        ResetPosition();
+                    }
+
                     
                     break;
                 }
@@ -151,8 +169,8 @@ public class Player : MonoBehaviour
 
     public void OnPlayerDeath ()
     {
-        myGameManager.gameTimeRemaining = 0;
-        playerLivesRemaining -= 1;
+        myGameManager.ResetTimer();
+        LoseLife();
         ResetPosition();
     }
 
@@ -160,5 +178,10 @@ public class Player : MonoBehaviour
     {
         transform.position = startPos;
         transform.GetComponent<SpriteRenderer>().sprite = playerUp;
+    }
+
+    public void LoseLife()
+    {
+        playerLivesRemaining -= 1;
     }
 }

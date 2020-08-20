@@ -96,4 +96,9 @@ public class GameManager : MonoBehaviour
             myPlayer.OnPlayerDeath();
         }
     }
+
+    public void ResetTimer ()
+    {
+        gameTimeRemaining = 0;
+    }
 }
