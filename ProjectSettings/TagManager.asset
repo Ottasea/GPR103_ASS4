@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CollidableObject
-  - log
+  - trophy
   - unsafe
   layers:
   - Default

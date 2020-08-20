@@ -22,7 +22,10 @@ public class CollidableObject : MonoBehaviour
     
     public bool isHomeBase;
     public bool hasTrophy = false;
+    
     public Sprite trophyBase;
+    public Sprite homeBase;
+
     
     public bool IsColliding (GameObject playerGameObject)
     {

@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     public float totalGameTime; //The maximum amount of time or the total time avilable to the player.
     public float timeWarning; //The point in time when the player is alerted that they are almost out of time.
     public float gameTimeRemaining; //The current elapsed time.
+
+    public Text startGameText;
+    public Text gameOverText;
     
     public Image timer;
     private Vector3 startTimerScale;
@@ -42,17 +45,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlayer.playerCanMove = false;
-        
-        isGameRunning = false;
-        
         startTimerScale = timer.GetComponent<RectTransform>().localScale;
         
         highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
 
-        timer.enabled = false;
+        GameReset();
 
-        myPlayer.GetComponent<SpriteRenderer>().enabled = false;
+
     }
 
     // Update is called once per frame
@@ -112,16 +111,16 @@ public class GameManager : MonoBehaviour
 
             if (gameTimeRemaining >= totalGameTime) //Is the current timer is equal to or greater than the max time, player dies
             {
-                myPlayer.OnPlayerDeath();
+                myPlayer.GameOver();
             }
         }
         
     }
 
-    public void ResetTimer ()
+    public void ResetTimer () //Resets the timer back to zero when called
     {
         gameTimeRemaining = 0;
-    }
+    } 
 
     public void UpdatePlayerScore (int score)
     {
@@ -133,20 +132,46 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", currentScore);
             highScoreText.text = currentScore.ToString();
         }
+    } 
+
+    public void ResetPlayerScore ()
+    {
+        scoreText.text = "0";
     }
 
     public void StartGame ()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (isGameRunning == false)
         {
-            myPlayer.playerCanMove = true;
-            
-            isGameRunning = true;
-            
-            timer.enabled = true;
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                myPlayer.playerCanMove = true;
 
-            myPlayer.GetComponent<SpriteRenderer>().enabled = true;
+                isGameRunning = true;
 
+                timer.enabled = true;
+
+                myPlayer.GetComponent<SpriteRenderer>().enabled = true;
+
+                ResetPlayerScore();
+            }
         }
+        
+       
+    }
+
+    public void GameReset()
+    {
+
+        timer.enabled = false;
+
+        myPlayer.GetComponent<SpriteRenderer>().enabled = false;
+
+        myPlayer.playerCanMove = false;
+
+        isGameRunning = false;
+
+        ResetTimer();
+
     }
 }

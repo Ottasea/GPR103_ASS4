@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This script must be used as the core Player script for managing the player character in the game.
@@ -12,8 +14,13 @@ public class Player : MonoBehaviour
 
     public int playerTotalLives; //Players total possible lives.
     public int playerLivesRemaining; //Players actual lives remaining.
-    
-    public bool playerIsAlive = true; //Is the player currently alive?
+
+    public int maxY = 0, currentY = 1;
+
+    public int frogsAtHome = 0;
+    public Text youWinText;
+
+
     public bool playerCanMove = false; //Can the player currently move?
     
     public Sprite playerUp, playerDown, playerLeft, playerRight; //Select how the player looks based on the direction its travelling.
@@ -30,6 +37,9 @@ public class Player : MonoBehaviour
     {
         startPos = transform.localPosition;
         playerLivesRemaining = playerTotalLives;
+        youWinText.enabled = false;
+
+        
     }
 
     // Update is called once per frame
@@ -49,7 +59,13 @@ public class Player : MonoBehaviour
 
             playerPos += Vector2.up;
 
-            myGameManager.UpdatePlayerScore(10);
+            if (currentY > maxY) //Will only give the player points if they have move forward passed their previous Y position (Y position resets on death and making it to a home base)
+            {
+                maxY = currentY;
+                myGameManager.UpdatePlayerScore(10);
+            }
+            
+            currentY++;
 
             PlayHopSound();
         }
@@ -60,6 +76,8 @@ public class Player : MonoBehaviour
             if (playerPos.y > myGameManager.levelConstraintBottom)
             {
                 playerPos += Vector2.down;
+
+                currentY--;
 
                 PlayHopSound();
             }
@@ -144,17 +162,15 @@ public class Player : MonoBehaviour
 
                             PlayHomeBaseSound();
 
+                            collidableObject.tag = "trophy";
+
                             myGameManager.UpdatePlayerScore(50);
 
                             collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBase;
 
-                            int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
-
-                            myGameManager.UpdatePlayerScore(leftOverTime * 20);
+                            frogsAtHome++;
 
                             ResetPosition();
-
-                            myGameManager.ResetTimer();
                         }
 
                         PlayHomeBaseSound();
@@ -184,16 +200,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GameOver()
-    {
-        playerLivesRemaining = playerTotalLives;
-        ResetPosition();
-    }
 
     public void OnPlayerDeath ()
     {
         PlaySquashedSound();
-        myGameManager.ResetTimer();
         LoseLife();
         ResetPosition();
     }
@@ -201,12 +211,64 @@ public class Player : MonoBehaviour
     public void ResetPosition ()
     {
         transform.position = startPos;
+        
         transform.GetComponent<SpriteRenderer>().sprite = playerUp;
+        
+        maxY = 0;
+        
+        currentY = 1;
     }
 
     public void LoseLife()
     {
         playerLivesRemaining -= 1;
+    }
+
+    public void GameOver()
+    {
+
+        myGameManager.GameReset();
+        
+        playerLivesRemaining = playerTotalLives;
+
+        ResetHomeBase();
+
+        ResetPosition();
+
+    }
+
+    public void ResetHomeBase()
+    {
+        GameObject[] trophies;
+        trophies = GameObject.FindGameObjectsWithTag("trophy");
+
+        foreach (GameObject trophy in trophies)
+        {
+            CollidableObject trophyObject = trophy.GetComponent<CollidableObject>();
+
+            trophyObject.GetComponent<SpriteRenderer>().sprite = trophyObject.homeBase;
+        }
+    }
+
+    public void PlayerWins()
+    {
+        if (frogsAtHome == 5)
+        {
+            youWinText.enabled = true;
+            
+            myGameManager.isGameRunning = false;
+
+            playerCanMove = false;
+            
+            int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
+
+            myGameManager.UpdatePlayerScore(leftOverTime * 20);
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                myGameManager.GameReset();
+            }
+        }
     }
 
     public void PlayHopSound()

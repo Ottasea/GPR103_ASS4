@@ -401,6 +401,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1001 &147286163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -504,7 +505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226, y: -691}
+  m_AnchoredPosition: {x: -58, y: -691}
   m_SizeDelta: {x: 350, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193490107
@@ -647,6 +648,7 @@ MonoBehaviour:
   isHomeBase: 1
   hasTrophy: 0
   trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
 --- !u!1001 &203654846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,6 +1176,7 @@ MonoBehaviour:
   isHomeBase: 1
   hasTrophy: 0
   trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
 --- !u!1 &317286399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -389, y: -691}
+  m_AnchoredPosition: {x: -420, y: -691}
   m_SizeDelta: {x: 350, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317286401
@@ -1859,6 +1862,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1001 &548097779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1988,7 +1992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -230, y: -692}
+  m_AnchoredPosition: {x: -284, y: -692}
   m_SizeDelta: {x: 350, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593560387
@@ -2131,6 +2135,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1 &631464427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,7 +2170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 417, y: -691}
+  m_AnchoredPosition: {x: 125, y: -691}
   m_SizeDelta: {x: 350, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &631464429
@@ -2462,6 +2467,7 @@ MonoBehaviour:
   isHomeBase: 1
   hasTrophy: 0
   trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
 --- !u!1 &729180652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,6 +2572,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1 &808630110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
@@ -2589,6 +2596,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1 &821124465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 219194555061866932, guid: 9e4753cc2badf64478155c50cda50740,
@@ -2612,6 +2620,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1 &826150718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2720,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1 &840484404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,9 +2758,11 @@ MonoBehaviour:
   levelConstraintLeft: -8
   levelConstraintRight: 8
   isGameRunning: 0
-  totalGameTime: 30
+  totalGameTime: 60
   timeWarning: 5
   gameTimeRemaining: 0
+  startGameText: {fileID: 0}
+  gameOverText: {fileID: 0}
   timer: {fileID: 2037012593}
   timerColor: 0
   lives:
@@ -2770,7 +2782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840484404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9878197, y: -0.85217947, z: -21.492188}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3224,6 +3236,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1001 &1093860970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3589,6 +3602,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1 &1437505634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3686,7 +3700,10 @@ MonoBehaviour:
   playerName: 
   playerTotalLives: 4
   playerLivesRemaining: 4
-  playerIsAlive: 1
+  maxY: 0
+  currentY: 0
+  frogsAtHome: 0
+  youWinText: {fileID: 0}
   playerCanMove: 1
   playerUp: {fileID: 21300000, guid: da21a1ea069356141b971af709574cea, type: 3}
   playerDown: {fileID: 21300000, guid: 2c6201cd960f3c847a7c22d97a86d7ce, type: 3}
@@ -3875,6 +3892,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1001 &1499976661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3997,6 +4015,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1001 &1562484510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4364,6 +4383,7 @@ MonoBehaviour:
   isHomeBase: 1
   hasTrophy: 0
   trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
 --- !u!1 &1726697298 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 819205156815618231, guid: eaf15b201bc0def428817966f5f7e9f2,
@@ -4387,6 +4407,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1001 &1736004621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4877,6 +4898,7 @@ MonoBehaviour:
   isHomeBase: 1
   hasTrophy: 0
   trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
 --- !u!1 &2037012591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,7 +4926,7 @@ RectTransform:
   m_GameObject: {fileID: 2037012591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 1, z: 1}
+  m_LocalScale: {x: 60, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1628884392}
   m_RootOrder: 5
@@ -5117,6 +5139,7 @@ MonoBehaviour:
   isHomeBase: 0
   hasTrophy: 0
   trophyBase: {fileID: 0}
+  homeBase: {fileID: 0}
 --- !u!1001 &819205155130060574
 PrefabInstance:
   m_ObjectHideFlags: 0
