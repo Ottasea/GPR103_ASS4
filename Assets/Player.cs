@@ -16,15 +16,13 @@ public class Player : MonoBehaviour
     public bool playerCanMove = false; //Can the player currently move?
     public Sprite playerUp, playerDown, playerLeft, playerRight; //Select how the player looks based on the direction its travelling.
 
-    private GameManager myGameManager; //A reference to the GameManager in the scene.
-    public GameObject gameManager; //Allows you to determine the GameManager that oversees the Player
+    public GameManager myGameManager; //A reference to the GameManager in the scene.
     private Vector2 startPos; //Where is the player on game start?
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.localPosition;
-        myGameManager = gameManager.GetComponent<GameManager>();
         playerLivesRemaining = playerTotalLives;
     }
 
