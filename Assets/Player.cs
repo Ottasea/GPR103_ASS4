@@ -178,6 +178,7 @@ public class Player : MonoBehaviour
 
                             if (frogsAtHome == 5)
                             {
+                                myGameManager.UpdatePlayerScore(1000);
                                 GameWon();
                             }
 
@@ -241,6 +242,8 @@ public class Player : MonoBehaviour
         
         playerIsAlive = false;
 
+        myGameManager.isGameRunning = false;
+
         GetComponent<SpriteRenderer>().enabled = false;
 
     }
@@ -254,17 +257,19 @@ public class Player : MonoBehaviour
         {
             CollidableObject trophyObject = trophy.GetComponent<CollidableObject>();
 
-            trophyObject.hasTrophy = false;
-
             trophyObject.tag = "CollidableObject";
 
             trophyObject.GetComponent<SpriteRenderer>().sprite = trophyObject.homeBase;
+
+            trophyObject.hasTrophy = false;
+
+            frogsAtHome = 0;
         }
     }
 
     public void CheckPlayAgain()
     {
-      if (gameWon == true || !playerIsAlive)
+      if (gameWon == true)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -274,11 +279,27 @@ public class Player : MonoBehaviour
 
                 ResetPosition();
 
+                ResetHomeBase();
+
                 gameWon = false;
 
-                playerIsAlive = true;
-
                 myGameManager.HideWin();
+
+            }
+        }
+      else if (playerIsAlive == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                myGameManager.GameReset();
+
+                playerLivesRemaining = playerTotalLives;
+
+                ResetPosition();
+
+                ResetHomeBase();
+
+                playerIsAlive = true;
 
                 myGameManager.HideGameOver();
             }
@@ -287,6 +308,8 @@ public class Player : MonoBehaviour
 
     public void GameWon()
     {
+        myGameManager.isGameRunning = false;
+
         int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
 
         myGameManager.UpdatePlayerScore(leftOverTime * 20);

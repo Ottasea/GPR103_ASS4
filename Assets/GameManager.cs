@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdatePlayerScore (int score)
     {
+        currentScore = int.Parse(scoreText.text);
         currentScore += score;
         scoreText.text = currentScore.ToString();
 
