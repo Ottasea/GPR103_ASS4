@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Scoring")]
     public int currentScore = 0; //The current score in this round.
     public int highScore = 0; //The highest score achieved either in this session or over the lifetime of the game.
+    public Text scoreText;
    
 
     [Header("Playable Area")]
@@ -21,9 +22,11 @@ public class GameManager : MonoBehaviour
 
     [Header("Gameplay Loop")]
     public bool isGameRunning; //Is the gameplay part of the game current active?
+    
     public float totalGameTime; //The maximum amount of time or the total time avilable to the player.
     public float timeWarning; //The point in time when the player is alerted that they are almost out of time.
     public float gameTimeRemaining; //The current elapsed time.
+    
     public Image timer;
     private Vector3 startTimerScale;
     public bool timerColor = false;
@@ -100,5 +103,14 @@ public class GameManager : MonoBehaviour
     public void ResetTimer ()
     {
         gameTimeRemaining = 0;
+    }
+
+    public void UpdatePlayerScore (int score)
+    {
+        currentScore = int.Parse(scoreText.text);
+
+        currentScore += score;
+
+        scoreText.text = currentScore.ToString();
     }
 }

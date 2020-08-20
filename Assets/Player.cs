@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = playerUp;
 
             playerPos += Vector2.up;
+
+            myGameManager.UpdatePlayerScore(10);
         }
         else if (Input.GetKeyDown(KeyCode.S) && playerCanMove == true)
         {
@@ -128,7 +130,13 @@ public class Player : MonoBehaviour
 
                             collidableObject.hasTrophy = true;
 
+                            myGameManager.UpdatePlayerScore(50);
+
                             collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBase;
+
+                            int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
+
+                            myGameManager.UpdatePlayerScore(leftOverTime * 10);
 
                             ResetPosition();
 
