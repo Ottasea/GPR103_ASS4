@@ -25,6 +25,8 @@ public class CollidableObject : MonoBehaviour
 
     public bool isFlyBase = false;
     public bool isCrocBase = false;
+
+    public bool isExtraLife;
     
     public Sprite trophyBaseSprite;
     public Sprite homeBaseSprite;
@@ -49,5 +51,10 @@ public class CollidableObject : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public float levelConstraintRight; //The maximum positive X value of the playablle space.
 
     public CollidableObject[] homeBase = new CollidableObject[5]; //Reference to the homebases in the game.
+    public Transform[] extraLifePos;
 
     [Header("Gameplay Loop")]
     public bool isGameRunning = false; //Is the gameplay part of the game current active?
@@ -40,6 +41,9 @@ public class GameManager : MonoBehaviour
 
     public float baseSpawnTimer = 5f;
     public float baseSpawnedTimer = 2f;
+
+    public float extraLifeSpawnTimer = 10f;
+    public float extraLifeSpawnedTimer = 3f;
 
     
     public Image timer;
@@ -64,6 +68,8 @@ public class GameManager : MonoBehaviour
         HideWin();
 
         StartCoroutine(BaseChanger());
+        
+        StartCoroutine(ExtraLifeSpawn());
 
     }
 
@@ -288,4 +294,21 @@ public class GameManager : MonoBehaviour
         } 
         
     } //spawns either a fly or a croc inside of the homebase every x amount of time for only a short duration
+
+    IEnumerator ExtraLifeSpawn()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(extraLifeSpawnTimer);
+
+            int randomIndex = Random.Range(0, extraLifePos.Length);
+
+            GameObject extraLifeClone = (GameObject)Instantiate(Resources.Load("extraLife", typeof(GameObject)), extraLifePos[randomIndex].position, Quaternion.identity);
+
+            yield return new WaitForSeconds(extraLifeSpawnedTimer);
+
+            Destroy(extraLifeClone);
+
+        }
+    }
 }

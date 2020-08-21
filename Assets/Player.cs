@@ -132,6 +132,26 @@ public class Player : MonoBehaviour
                 {
                     isSafe = true;
 
+
+                    if (collidableObject.isExtraLife)
+                    {
+                        if (playerLivesRemaining != playerTotalLives)
+                        {
+                            playerLivesRemaining++;
+                            myGameManager.UpdatePlayerScore(100);
+                            collidableObject.Destroy();
+                            PlayHomeBaseSound();
+                        }
+                        
+                        else
+                        {
+                            myGameManager.UpdatePlayerScore(100);
+                            collidableObject.Destroy();
+                            PlayHomeBaseSound();
+                        }
+
+                    }
+
                     if (collidableObject.isSafeObject) //if you have landed on a collidable object that is either a log or turtle, player will travel along with them
                     {
                         Vector2 playerPos = transform.position;

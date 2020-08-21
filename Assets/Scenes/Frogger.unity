@@ -402,10 +402,41 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 0}
   homeBaseSprite: {fileID: 0}
   flyBaseSprite: {fileID: 0}
   crocBaseSprite: {fileID: 0}
+--- !u!1 &119547407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 119547410}
+  m_Layer: 0
+  m_Name: extraLife_pos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &119547410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119547407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &147286163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -653,6 +684,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
   flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
@@ -1195,10 +1227,41 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
   flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
   crocBaseSprite: {fileID: 21300000, guid: ca9291535c24f934195f39f6f3ebe2d1, type: 3}
+--- !u!1 &310396304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310396307}
+  m_Layer: 0
+  m_Name: extraLife_pos3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &310396307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310396304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317286399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +2026,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 0}
   homeBaseSprite: {fileID: 0}
   flyBaseSprite: {fileID: 0}
@@ -2323,6 +2387,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 0}
   homeBaseSprite: {fileID: 0}
   flyBaseSprite: {fileID: 0}
@@ -2664,6 +2729,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
   flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
@@ -2849,6 +2915,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 0}
   homeBaseSprite: {fileID: 0}
   flyBaseSprite: {fileID: 0}
@@ -2900,12 +2967,19 @@ MonoBehaviour:
   - {fileID: 1680151848}
   - {fileID: 2017904111}
   - {fileID: 202625157}
+  extraLifePos:
+  - {fileID: 1074930194}
+  - {fileID: 119547410}
+  - {fileID: 310396307}
+  - {fileID: 1010163133}
   isGameRunning: 0
   totalGameTime: 60
   timeWarning: 5
   gameTimeRemaining: 0
   baseSpawnTimer: 5
   baseSpawnedTimer: 2
+  extraLifeSpawnTimer: 10
+  extraLifeSpawnedTimer: 3
   timer: {fileID: 2037012593}
   timerColor: 0
   lives:
@@ -3366,6 +3440,66 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7287422471985225294, guid: f34daea7048d5614abab80afc92985f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f34daea7048d5614abab80afc92985f1, type: 3}
+--- !u!1 &1010163130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010163133}
+  m_Layer: 0
+  m_Name: extraLife_pos4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1010163133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010163130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1074930193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074930194}
+  m_Layer: 0
+  m_Name: extraLife_pos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1074930194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074930193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1093860970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3810,6 +3944,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 0}
   homeBaseSprite: {fileID: 0}
   flyBaseSprite: {fileID: 0}
@@ -4109,6 +4244,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 0}
   homeBaseSprite: {fileID: 0}
   flyBaseSprite: {fileID: 0}
@@ -4662,6 +4798,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
   flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
@@ -5162,6 +5299,7 @@ MonoBehaviour:
   hasTrophy: 0
   isFlyBase: 0
   isCrocBase: 0
+  isExtraLife: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
   flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
