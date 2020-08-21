@@ -265,15 +265,27 @@ public class GameManager : MonoBehaviour
 
                     yield return new WaitForSeconds(baseSpawnedTimer);
 
-                    homeBase[randomIndex].isFlyBase = false;
+                    if (homeBase[randomIndex].hasTrophy == true)
+                    {
+                        homeBase[randomIndex].isFlyBase = false;
 
-                    homeBase[randomIndex].isHomeBase = true;
+                        homeBase[randomIndex].isHomeBase = true;
 
-                    homeBase[randomIndex].GetComponent<SpriteRenderer>().sprite = homeBase[randomIndex].homeBaseSprite;
+                        homeBase[randomIndex].GetComponent<SpriteRenderer>().sprite = homeBase[randomIndex].trophyBaseSprite;
+                    }
+
+                    else
+                    {
+                        homeBase[randomIndex].isFlyBase = false;
+
+                        homeBase[randomIndex].isHomeBase = true;
+
+                        homeBase[randomIndex].GetComponent<SpriteRenderer>().sprite = homeBase[randomIndex].homeBaseSprite;
+                    }                    
                 } 
             }
 
         } 
         
-    }
+    } //spawns either a fly or a croc inside of the homebase every x amount of time for only a short duration
 }

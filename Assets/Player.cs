@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         CheckPlayAgain();
     }
 
-    private void UpdatePosition()
+    private void UpdatePosition() //Update the position of the player by 1 unit based off direction pressed
     {
         if (!gameWon || playerIsAlive == true)
         {
@@ -114,9 +114,9 @@ public class Player : MonoBehaviour
             
         }
         
-    }
+    } 
 
-    private void CheckCollisions()
+    private void CheckCollisions() //Check for what the player has collided with and act accordingly
     {
         bool isSafe = true;
 
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
                 {
                     isSafe = true;
 
-                    if (collidableObject.isSafeObject)
+                    if (collidableObject.isSafeObject) //if you have landed on a collidable object that is either a log or turtle, player will travel along with them
                     {
                         Vector2 playerPos = transform.position;
 
@@ -161,12 +161,10 @@ public class Player : MonoBehaviour
 
                     if (collidableObject.isHomeBase)
                     {
-                        if (!collidableObject.hasTrophy)
+                        if (!collidableObject.hasTrophy) //Allow a frog to return home, award points and then reset position
                         {
 
                             collidableObject.hasTrophy = true;
-
-                            PlayHomeBaseSound();
 
                             collidableObject.tag = "trophy";
 
@@ -174,22 +172,34 @@ public class Player : MonoBehaviour
 
                             collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBaseSprite;
 
-                            frogsAtHome++;
+                            FrogHome();
 
-                            if (frogsAtHome == 5)
-                            {
-                                myGameManager.UpdatePlayerScore(1000);
-                                GameWon();
-                            }
-
-                            ResetPosition();
                         }
 
                         PlayHomeBaseSound();
                         ResetPosition();
                     }
 
-                    
+                    if (collidableObject.isFlyBase) //If a fly was on the base at the time of colliding, award 100 bonus points and set to trophy
+                    {
+                        if (!collidableObject.hasTrophy)
+                        {
+                            collidableObject.hasTrophy = true;
+
+                            collidableObject.tag = "trophy";
+
+                            collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBaseSprite;
+
+                            myGameManager.UpdatePlayerScore(150);
+
+                            FrogHome();
+                        }
+
+                        PlayHomeBaseSound();
+                        ResetPosition();
+                    }
+
+
                     break;
                 }
                 else
@@ -322,6 +332,21 @@ public class Player : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
     }
 
+    public void FrogHome()
+    {
+        PlayHomeBaseSound();
+
+        frogsAtHome++;
+
+        if (frogsAtHome == 5)
+        {
+            myGameManager.UpdatePlayerScore(1000);
+            GameWon();
+        }
+
+        ResetPosition();
+    }
+    
     public void PlayHopSound()
     {
         AudioSource.PlayClipAtPoint(hopSound, transform.position);

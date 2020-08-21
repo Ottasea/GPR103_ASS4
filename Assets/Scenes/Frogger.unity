@@ -655,8 +655,8 @@ MonoBehaviour:
   isCrocBase: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
-  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
-  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: ca9291535c24f934195f39f6f3ebe2d1, type: 3}
 --- !u!1001 &203654846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1197,8 +1197,8 @@ MonoBehaviour:
   isCrocBase: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
-  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
-  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: ca9291535c24f934195f39f6f3ebe2d1, type: 3}
 --- !u!1 &317286399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,8 +2666,8 @@ MonoBehaviour:
   isCrocBase: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
-  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
-  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: ca9291535c24f934195f39f6f3ebe2d1, type: 3}
 --- !u!1 &729180652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4664,8 +4664,8 @@ MonoBehaviour:
   isCrocBase: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
-  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
-  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: ca9291535c24f934195f39f6f3ebe2d1, type: 3}
 --- !u!1001 &1736004621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5164,8 +5164,8 @@ MonoBehaviour:
   isCrocBase: 0
   trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
   homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
-  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
-  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: 7310ab726284f9e49b49ab058d01dfc1, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: ca9291535c24f934195f39f6f3ebe2d1, type: 3}
 --- !u!1 &2037012591
 GameObject:
   m_ObjectHideFlags: 0
