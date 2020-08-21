@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
 
                             myGameManager.UpdatePlayerScore(50);
 
-                            collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBase;
+                            collidableObject.GetComponent<SpriteRenderer>().sprite = collidableObject.trophyBaseSprite;
 
                             frogsAtHome++;
 
@@ -259,7 +259,7 @@ public class Player : MonoBehaviour
 
             trophyObject.tag = "CollidableObject";
 
-            trophyObject.GetComponent<SpriteRenderer>().sprite = trophyObject.homeBase;
+            trophyObject.GetComponent<SpriteRenderer>().sprite = trophyObject.homeBaseSprite;
 
             trophyObject.hasTrophy = false;
 
@@ -309,6 +309,7 @@ public class Player : MonoBehaviour
     public void GameWon()
     {
         myGameManager.isGameRunning = false;
+
 
         int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
 

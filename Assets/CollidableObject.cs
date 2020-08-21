@@ -22,10 +22,15 @@ public class CollidableObject : MonoBehaviour
     
     public bool isHomeBase;
     public bool hasTrophy = false;
-    
-    public Sprite trophyBase;
-    public Sprite homeBase;
 
+    public bool isFlyBase = false;
+    public bool isCrocBase = false;
+    
+    public Sprite trophyBaseSprite;
+    public Sprite homeBaseSprite;
+    public Sprite flyBaseSprite;
+    public Sprite crocBaseSprite;
+    
     
     public bool IsColliding (GameObject playerGameObject)
     {

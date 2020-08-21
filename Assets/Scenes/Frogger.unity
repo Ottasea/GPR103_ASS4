@@ -400,8 +400,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 0
   hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 0}
+  homeBaseSprite: {fileID: 0}
+  flyBaseSprite: {fileID: 0}
+  crocBaseSprite: {fileID: 0}
 --- !u!1001 &147286163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -647,8 +651,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 1
   hasTrophy: 0
-  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
-  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
 --- !u!1001 &203654846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -920,6 +928,11 @@ PrefabInstance:
       propertyPath: runTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4677100891228030083, guid: eaf15b201bc0def428817966f5f7e9f2,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     m_RemovedComponents:
     - {fileID: 5854891480620327973, guid: eaf15b201bc0def428817966f5f7e9f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eaf15b201bc0def428817966f5f7e9f2, type: 3}
@@ -995,6 +1008,11 @@ PrefabInstance:
       propertyPath: speed
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6715269374352240747, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     - target: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
         type: 3}
       propertyPath: m_Name
@@ -1175,8 +1193,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 1
   hasTrophy: 0
-  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
-  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
 --- !u!1 &317286399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,8 +1961,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 0
   hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 0}
+  homeBaseSprite: {fileID: 0}
+  flyBaseSprite: {fileID: 0}
+  crocBaseSprite: {fileID: 0}
 --- !u!1001 &548097779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2033,6 +2059,11 @@ PrefabInstance:
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4677100891228030083, guid: eaf15b201bc0def428817966f5f7e9f2,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     m_RemovedComponents:
     - {fileID: 5854891480620327973, guid: eaf15b201bc0def428817966f5f7e9f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eaf15b201bc0def428817966f5f7e9f2, type: 3}
@@ -2290,8 +2321,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 0
   hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 0}
+  homeBaseSprite: {fileID: 0}
+  flyBaseSprite: {fileID: 0}
+  crocBaseSprite: {fileID: 0}
 --- !u!1 &631464427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,6 +2556,11 @@ PrefabInstance:
       propertyPath: runTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8993759592209125887, guid: 2ae53fc6d0bad344090d151c2fcb270c,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     m_RemovedComponents:
     - {fileID: 8993759592209125886, guid: 2ae53fc6d0bad344090d151c2fcb270c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ae53fc6d0bad344090d151c2fcb270c, type: 3}
@@ -2622,8 +2662,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 1
   hasTrophy: 0
-  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
-  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
 --- !u!1 &729180652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,78 +2749,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &744418031 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8993759592209125760, guid: 2ae53fc6d0bad344090d151c2fcb270c,
-    type: 3}
-  m_PrefabInstance: {fileID: 705065605}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &744418032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744418031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSafe: 0
-  isSafeObject: 0
-  isHomeBase: 0
-  hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
---- !u!1 &808630110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 887242332}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &808630111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808630110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSafe: 0
-  isSafeObject: 0
-  isHomeBase: 0
-  hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
---- !u!1 &821124465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 219194555061866932, guid: 9e4753cc2badf64478155c50cda50740,
-    type: 3}
-  m_PrefabInstance: {fileID: 1961756150}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &821124466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821124465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSafe: 0
-  isSafeObject: 0
-  isHomeBase: 0
-  hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
 --- !u!1 &826150718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,8 +2847,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 0
   hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 0}
+  homeBaseSprite: {fileID: 0}
+  flyBaseSprite: {fileID: 0}
+  crocBaseSprite: {fileID: 0}
 --- !u!1 &840484404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,10 +2894,18 @@ MonoBehaviour:
   levelConstraintBottom: -6
   levelConstraintLeft: -8
   levelConstraintRight: 8
+  homeBase:
+  - {fileID: 309898653}
+  - {fileID: 713655270}
+  - {fileID: 1680151848}
+  - {fileID: 2017904111}
+  - {fileID: 202625157}
   isGameRunning: 0
   totalGameTime: 60
   timeWarning: 5
   gameTimeRemaining: 0
+  baseSpawnTimer: 5
+  baseSpawnedTimer: 2
   timer: {fileID: 2037012593}
   timerColor: 0
   lives:
@@ -3019,6 +3003,11 @@ PrefabInstance:
       propertyPath: speed
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6715269374352240747, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     - target: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
         type: 3}
       propertyPath: m_Name
@@ -3104,6 +3093,11 @@ PrefabInstance:
       propertyPath: speed
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6715269374352240747, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     - target: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
         type: 3}
       propertyPath: m_Name
@@ -3372,30 +3366,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7287422471985225294, guid: f34daea7048d5614abab80afc92985f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f34daea7048d5614abab80afc92985f1, type: 3}
---- !u!1 &1003700823 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 851627341}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1003700824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003700823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSafe: 0
-  isSafeObject: 0
-  isHomeBase: 0
-  hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
 --- !u!1001 &1093860970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3838,8 +3808,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 0
   hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 0}
+  homeBaseSprite: {fileID: 0}
+  flyBaseSprite: {fileID: 0}
+  crocBaseSprite: {fileID: 0}
 --- !u!1 &1437505634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,6 +4001,11 @@ PrefabInstance:
       propertyPath: runTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7726580021871305140, guid: cde50c789d3f89b42bbe665d6632a23e,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     m_RemovedComponents:
     - {fileID: 1592871736, guid: cde50c789d3f89b42bbe665d6632a23e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cde50c789d3f89b42bbe665d6632a23e, type: 3}
@@ -4128,8 +4107,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 0
   hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 0}
+  homeBaseSprite: {fileID: 0}
+  flyBaseSprite: {fileID: 0}
+  crocBaseSprite: {fileID: 0}
 --- !u!1001 &1499976661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4229,30 +4212,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a05260186c4bc44f9f62f92792249b8, type: 3}
---- !u!1 &1555764328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 819205156815618231, guid: eaf15b201bc0def428817966f5f7e9f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 226260088}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1555764329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555764328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSafe: 0
-  isSafeObject: 0
-  isHomeBase: 0
-  hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
 --- !u!1001 &1562484510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4701,32 +4660,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 1
   hasTrophy: 0
-  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
-  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
---- !u!1 &1726697298 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 819205156815618231, guid: eaf15b201bc0def428817966f5f7e9f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 548097779}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1726697299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726697298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSafe: 0
-  isSafeObject: 0
-  isHomeBase: 0
-  hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
 --- !u!1001 &1736004621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4843,6 +4782,11 @@ PrefabInstance:
       propertyPath: endPosition.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 6339992405967937901, guid: 9e4753cc2badf64478155c50cda50740,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     - target: {fileID: 7066561920853083503, guid: 9e4753cc2badf64478155c50cda50740,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5216,8 +5160,12 @@ MonoBehaviour:
   isSafeObject: 0
   isHomeBase: 1
   hasTrophy: 0
-  trophyBase: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
-  homeBase: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  isFlyBase: 0
+  isCrocBase: 0
+  trophyBaseSprite: {fileID: 21300000, guid: af8b9ac9de0a6fe499ae9223b627b8c5, type: 3}
+  homeBaseSprite: {fileID: 21300000, guid: f2b4a1ee8bc35a54abd0e17e79858b02, type: 3}
+  flyBaseSprite: {fileID: 21300000, guid: d3a5f29d3eb92d84083c6992ed93670f, type: 3}
+  crocBaseSprite: {fileID: 21300000, guid: fcf4dbd92b2a84b438cb145acb53ad0c, type: 3}
 --- !u!1 &2037012591
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,30 +5383,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086562476}
   m_CullTransparentMesh: 0
---- !u!1 &2137022060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 242016168}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2137022061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137022060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e15cb26ecf0e584d8a751b8bd612ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSafe: 0
-  isSafeObject: 0
-  isHomeBase: 0
-  hasTrophy: 0
-  trophyBase: {fileID: 0}
-  homeBase: {fileID: 0}
 --- !u!1001 &819205155130060574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5531,6 +5455,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CollidableObject
       objectReference: {fileID: 0}
+    - target: {fileID: 4677100891228030083, guid: eaf15b201bc0def428817966f5f7e9f2,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf15b201bc0def428817966f5f7e9f2, type: 3}
 --- !u!1001 &1322749348003381566
@@ -5595,6 +5524,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6715269374352240747, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     - target: {fileID: 6955768871446603090, guid: 4c6f2fda9967e1b40b0e17823bea33cf,
         type: 3}
       propertyPath: m_Name
@@ -5754,6 +5688,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7726580021871305140, guid: cde50c789d3f89b42bbe665d6632a23e,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde50c789d3f89b42bbe665d6632a23e, type: 3}
 --- !u!1001 &2618199360938927112
@@ -6138,6 +6077,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CollidableObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6339992405967937901, guid: 9e4753cc2badf64478155c50cda50740,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     - target: {fileID: 7066561920853083503, guid: 9e4753cc2badf64478155c50cda50740,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6267,5 +6211,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8993759592209125887, guid: 2ae53fc6d0bad344090d151c2fcb270c,
+        type: 3}
+      propertyPath: myGameManager
+      value: 
+      objectReference: {fileID: 840484405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ae53fc6d0bad344090d151c2fcb270c, type: 3}

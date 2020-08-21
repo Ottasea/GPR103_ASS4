@@ -29,12 +29,17 @@ public class GameManager : MonoBehaviour
     public float levelConstraintLeft; //The maximum negative X value of the playable space.
     public float levelConstraintRight; //The maximum positive X value of the playablle space.
 
+    public CollidableObject[] homeBase = new CollidableObject[5]; //Reference to the homebases in the game.
+
     [Header("Gameplay Loop")]
     public bool isGameRunning = false; //Is the gameplay part of the game current active?
     
     public float totalGameTime; //The maximum amount of time or the total time avilable to the player.
     public float timeWarning; //The point in time when the player is alerted that they are almost out of time.
     public float gameTimeRemaining; //The current elapsed time.
+
+    public float baseSpawnTimer = 5f;
+    public float baseSpawnedTimer = 2f;
 
     
     public Image timer;
@@ -57,6 +62,8 @@ public class GameManager : MonoBehaviour
         GameReset();
 
         HideWin();
+
+        StartCoroutine(BaseChanger());
 
     }
 
@@ -210,5 +217,63 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.enabled = false;
         gameOverSubText.enabled = false;
+    }
+
+    IEnumerator BaseChanger()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(baseSpawnTimer);
+
+            int randomIndex = Random.Range(0, homeBase.Length);
+
+            yield return homeBase[randomIndex];
+
+            float baseModifier = Random.value;
+
+            if (!homeBase[randomIndex].hasTrophy)
+            {
+                if (baseModifier < 0.5f)
+                {
+                    homeBase[randomIndex].isCrocBase = true;
+
+                    homeBase[randomIndex].isSafe = false;
+
+                    homeBase[randomIndex].isHomeBase = false;
+
+                    homeBase[randomIndex].GetComponent<SpriteRenderer>().sprite = homeBase[randomIndex].crocBaseSprite;
+
+                    yield return new WaitForSeconds(baseSpawnedTimer);
+
+                    homeBase[randomIndex].isCrocBase = false;
+
+                    homeBase[randomIndex].isSafe = true;
+
+                    homeBase[randomIndex].isHomeBase = true;
+
+                    homeBase[randomIndex].GetComponent<SpriteRenderer>().sprite = homeBase[randomIndex].homeBaseSprite;
+
+                }
+
+                else if (baseModifier > 0.5f)
+                {
+                    homeBase[randomIndex].isFlyBase = true;
+
+                    homeBase[randomIndex].isHomeBase = false;
+
+                    homeBase[randomIndex].GetComponent<SpriteRenderer>().sprite = homeBase[randomIndex].flyBaseSprite;
+
+                    yield return new WaitForSeconds(baseSpawnedTimer);
+
+                    homeBase[randomIndex].isFlyBase = false;
+
+                    homeBase[randomIndex].isHomeBase = true;
+
+                    homeBase[randomIndex].GetComponent<SpriteRenderer>().sprite = homeBase[randomIndex].homeBaseSprite;
+                } 
+            }
+
+        } 
+        
     }
 }

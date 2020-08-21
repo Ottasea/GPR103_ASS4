@@ -14,6 +14,7 @@ public class Vehicle : MonoBehaviour
     public bool paused = true;
     public float runTime;
     float currentRunTime = 0.0f;
+    public GameManager myGameManager;
 
 
     // Start is called before the first frame update
@@ -24,18 +25,24 @@ public class Vehicle : MonoBehaviour
 
     void Update()
     {
+
+        VehicleSpawn();
+
+    }
+
+    public void VehicleSpawn()
+    {
         currentRunTime += Time.deltaTime;
         if (currentRunTime >= runTime)
-        {
-            paused = false;
-            transform.Translate(Vector2.right * Time.deltaTime * speed * moveDirection);
-        }
-        
-        if ((transform.position.x * moveDirection) > (endPosition.x * moveDirection))
-        {
-            transform.position = startingPosition;
-        }
+            {
+                paused = false;
+                transform.Translate(Vector2.right * Time.deltaTime * speed * moveDirection);
+            }
 
+            if ((transform.position.x * moveDirection) > (endPosition.x * moveDirection))
+            {
+                transform.position = startingPosition;
+            }
     }
     
 
