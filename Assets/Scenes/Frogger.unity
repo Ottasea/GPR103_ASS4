@@ -2982,6 +2982,7 @@ MonoBehaviour:
   extraLifeSpawnedTimer: 3
   timer: {fileID: 2037012593}
   timerColor: 0
+  timeWarningSound: {fileID: 8300000, guid: 46bd47dfa7c31274890cc5d29f1e6b38, type: 3}
   lives:
   - {fileID: 887539843}
   - {fileID: 459756043}
@@ -4043,7 +4044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2338d10ecd33e424cb94a839a5b093c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
   playerTotalLives: 4
   playerLivesRemaining: 4
   maxY: 0

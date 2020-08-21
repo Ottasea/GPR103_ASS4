@@ -8,30 +8,30 @@ public class CollidableObject : MonoBehaviour
     //Following code is from The Weekly Coder youtube channel, was unable to get OnCollisionEnter to do what I wanted for hopping on the logs
     //and this piece of code seemed to be a good alternative without destroying the code I had already put in place
     
-    Rect playerRect;
+    Rect playerRect; //Collider for player
     Vector2 playerSize; //Size of the player sprite
     Vector2 playerPosition; //Position of the player sprite
 
-    Rect collidableObjectRect;
+    Rect collidableObjectRect; //Collider for object this is attached too
     Vector2 collidableObjectSize; //Size of the collidable object
     Vector2 collidableObjectPosition; //Position of the collidable object
 
-    public bool isSafe;
+    public bool isSafe; //Is the player on a safe space?
     
-    public bool isSafeObject;
+    public bool isSafeObject; //is the object safe?
     
-    public bool isHomeBase;
-    public bool hasTrophy = false;
+    public bool isHomeBase; //is the player on home base?
+    public bool hasTrophy = false; //does homebase have a trophy?
 
-    public bool isFlyBase = false;
-    public bool isCrocBase = false;
+    public bool isFlyBase = false; //is there currently a fly in the home base?
+    public bool isCrocBase = false; //is there currently a crocodile in the home base?
 
-    public bool isExtraLife;
+    public bool isExtraLife; //is this object an extra life?
     
-    public Sprite trophyBaseSprite;
-    public Sprite homeBaseSprite;
-    public Sprite flyBaseSprite;
-    public Sprite crocBaseSprite;
+    public Sprite trophyBaseSprite; //Sprite used when a trophy is in home base.
+    public Sprite homeBaseSprite; //Default sprite used for home base.
+    public Sprite flyBaseSprite; //Sprite used when a fly is in home base.
+    public Sprite crocBaseSprite; //Sprite used when a croc is in home base.
     
     
     public bool IsColliding (GameObject playerGameObject)

@@ -8,26 +8,24 @@ using UnityEngine;
 /// </summary>
 public class Player : MonoBehaviour
 {
-    public string playerName = ""; //The players name for the purpose of storing the high score
-
     public int playerTotalLives; //Players total possible lives.
     public int playerLivesRemaining; //Players actual lives remaining.
   
 
-    public int maxY = 0, currentY = 1;
+    public int maxY = 0, currentY = 1; //Used to make sure that player is only increasing score when moving forward (and only when advancing further then their previous position).
 
-    public int frogsAtHome = 0;
+    public int frogsAtHome = 0; //How many times the player has reached the end.
 
-    private bool gameWon = false;
+    private bool gameWon = false; //Has the player won the game?
 
     public bool playerCanMove = false; //Can the player currently move?
     public bool playerIsAlive = true; //Is the player alive?
     
     public Sprite playerUp, playerDown, playerLeft, playerRight; //Select how the player looks based on the direction its travelling.
 
-    public AudioClip hopSound;
-    public AudioClip squashSound;
-    public AudioClip homeBaseSound;
+    public AudioClip hopSound; //Sound used when player makes frogger hop.
+    public AudioClip squashSound; //Sound used when player has died.
+    public AudioClip homeBaseSound; //Sound used when player has made it to home base or collected a extra life.
 
     public GameManager myGameManager; //A reference to the GameManager in the scene.
     private Vector2 startPos; //Where is the player on game start?

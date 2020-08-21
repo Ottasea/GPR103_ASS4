@@ -30,7 +30,7 @@ public class Vehicle : MonoBehaviour
 
     }
 
-    public void VehicleSpawn()
+    public void VehicleSpawn() //Spawn the vehicles and determine if they are moving left or right
     {
         currentRunTime += Time.deltaTime;
         if (currentRunTime >= runTime)

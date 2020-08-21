@@ -45,15 +45,15 @@ public class GameManager : MonoBehaviour
     public float extraLifeSpawnTimer = 10f;
     public float extraLifeSpawnedTimer = 3f;
 
-    
     public Image timer;
     private Vector3 startTimerScale;
     public bool timerColor = false;
+    public AudioClip timeWarningSound;
 
     [Header("Health System")]
     public Image[] lives; //Reference to the image in the canvas used to display lives.
-    public Sprite fullLife;
-    public Sprite noLife;
+    public Sprite fullLife; //Sprite to be shown when a life needs to be visible
+    public Sprite noLife; //Sprite to show after loss of life
     public Player myPlayer; //Reference to the Player in the scene.
 
     // Start is called before the first frame update
@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
             {
                 timerColor = true;
                 timer.color = Color.red;
+                AudioSource.PlayClipAtPoint(timeWarningSound, transform.position);
             }
             else
             {
@@ -141,7 +142,7 @@ public class GameManager : MonoBehaviour
         gameTimeRemaining = 0;
     } 
 
-    public void UpdatePlayerScore (int score)
+    public void UpdatePlayerScore (int score) //Keeps track of player score and converts to High Score when approriate
     {
         currentScore = int.Parse(scoreText.text);
         currentScore += score;
@@ -154,12 +155,12 @@ public class GameManager : MonoBehaviour
         }
     } 
 
-    public void ResetPlayerScore ()
+    public void ResetPlayerScore () //Reset the players score upon starting a new game
     {
         scoreText.text = "0";
     }
-
-    public void StartGame ()
+   
+    public void StartGame ()//Allows the game to start
     {
         if (isGameRunning == false)
         {
@@ -182,7 +183,7 @@ public class GameManager : MonoBehaviour
        
     }
 
-    public void GameReset()
+    public void GameReset()//Reset game after a win or game over screen
     {
 
         timer.enabled = false;
@@ -201,25 +202,25 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void ShowWin()
+    public void ShowWin()//Show win text
     {
         winText.enabled = true;
         winSubText.enabled = true;
     }
 
-    public void HideWin()
+    public void HideWin()//Hide win text
     {
         winText.enabled = false;
         winSubText.enabled = false;
     }
 
-    public void ShowGameOver()
+    public void ShowGameOver() //Show game over text.
     {
         gameOverText.enabled = true;
         gameOverSubText.enabled = true;
     }
 
-    public void HideGameOver()
+    public void HideGameOver() //Hide game over text
     {
         gameOverText.enabled = false;
         gameOverSubText.enabled = false;
@@ -295,7 +296,7 @@ public class GameManager : MonoBehaviour
         
     } //spawns either a fly or a croc inside of the homebase every x amount of time for only a short duration
 
-    IEnumerator ExtraLifeSpawn()
+    IEnumerator ExtraLifeSpawn() //spawns extra lives at random spawn points every 10 seconds for a period of 4 seconds (time can be changed)
     {
         while (true)
         {
