@@ -46,9 +46,8 @@ public class GameManager : MonoBehaviour
     public float extraLifeSpawnedTimer = 3f;
 
     public Image timer;
-    private Vector3 startTimerScale;
+    public Vector3 startTimerScale;
     public bool timerColor = false;
-    public AudioClip timeWarningSound;
 
     [Header("Health System")]
     public Image[] lives; //Reference to the image in the canvas used to display lives.
@@ -120,7 +119,6 @@ public class GameManager : MonoBehaviour
             {
                 timerColor = true;
                 timer.color = Color.red;
-                AudioSource.PlayClipAtPoint(timeWarningSound, transform.position);
             }
             else
             {

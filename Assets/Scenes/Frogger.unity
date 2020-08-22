@@ -2981,8 +2981,8 @@ MonoBehaviour:
   extraLifeSpawnTimer: 10
   extraLifeSpawnedTimer: 3
   timer: {fileID: 2037012593}
+  startTimerScale: {x: 0, y: 0, z: 0}
   timerColor: 0
-  timeWarningSound: {fileID: 8300000, guid: 46bd47dfa7c31274890cc5d29f1e6b38, type: 3}
   lives:
   - {fileID: 887539843}
   - {fileID: 459756043}
