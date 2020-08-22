@@ -6,7 +6,8 @@ Operation Instructions
 Move Frogger using WASD
 
 Audio
-All audio files used in the game came from http://www.classicgaming.cc/classics/frogger/sounds
+Sound Effects: http://www.classicgaming.cc/classics/frogger/sounds
+Level Music: http://www.digitpress.com/dpsoundz/mp3/dp_frogger.mp3
 
 Graphics 
 All graphics came from https://www.spriters-resource.com/fullview/48863/?source=genre

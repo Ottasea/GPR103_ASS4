@@ -267,6 +267,8 @@ public class Player : MonoBehaviour
     {
         myGameManager.isGameRunning = false;
 
+        myGameManager.myAudio.Stop();
+
         playerIsAlive = false;
 
         myGameManager.ShowGameOver();
@@ -302,6 +304,8 @@ public class Player : MonoBehaviour
             {
                 myGameManager.GameReset();
 
+                myGameManager.myAudio.Stop();
+
                 playerLivesRemaining = playerTotalLives;
 
                 ResetPosition();
@@ -320,6 +324,8 @@ public class Player : MonoBehaviour
             {
                 myGameManager.GameReset();
 
+                myGameManager.myAudio.Stop();
+
                 playerLivesRemaining = playerTotalLives;
 
                 ResetPosition();
@@ -336,6 +342,8 @@ public class Player : MonoBehaviour
     public void GameWon()
     {
         myGameManager.isGameRunning = false;
+
+        myGameManager.myAudio.Stop();
 
         int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
 
@@ -365,12 +373,12 @@ public class Player : MonoBehaviour
     
     public void PlayHopSound()
     {
-        AudioSource.PlayClipAtPoint(hopSound, transform.position);
+        AudioSource.PlayClipAtPoint(hopSound, transform.position, 0.5F);
     }
 
     public void PlaySquashedSound()
     {
-        AudioSource.PlayClipAtPoint(squashSound, transform.position);
+        AudioSource.PlayClipAtPoint(squashSound, transform.position, 0.5F);
     }
 
     public void PlayHomeBaseSound()

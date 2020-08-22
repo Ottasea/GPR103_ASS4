@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
     public Vector3 startTimerScale;
     public bool timerColor = false;
 
+    public AudioSource myAudio;
+
     [Header("Health System")]
     public Image[] lives; //Reference to the image in the canvas used to display lives.
     public Sprite fullLife; //Sprite to be shown when a life needs to be visible
@@ -69,6 +71,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(BaseChanger());
         
         StartCoroutine(ExtraLifeSpawn());
+
+        myAudio = GetComponent<AudioSource>();
+
+        myAudio.Stop();
 
     }
 
@@ -169,6 +175,9 @@ public class GameManager : MonoBehaviour
                 isGameRunning = true;
 
                 timer.enabled = true;
+
+                myAudio.loop = true;
+                myAudio.Play();
 
                 myPlayer.GetComponent<SpriteRenderer>().enabled = true;
 

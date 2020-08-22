@@ -27,6 +27,7 @@ public class CollidableObject : MonoBehaviour
     public bool isCrocBase = false; //is there currently a crocodile in the home base?
 
     public bool isExtraLife; //is this object an extra life?
+
     
     public Sprite trophyBaseSprite; //Sprite used when a trophy is in home base.
     public Sprite homeBaseSprite; //Default sprite used for home base.
