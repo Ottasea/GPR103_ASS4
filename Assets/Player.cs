@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
     private void UpdatePosition() //Update the position of the player by 1 unit based off direction pressed
     {
-        if (!gameWon || playerIsAlive == true)
+        if (!gameWon && playerIsAlive == true)
         {
             if (playerCanMove == true)
             {
@@ -267,9 +267,9 @@ public class Player : MonoBehaviour
     {
         myGameManager.isGameRunning = false;
 
-        myGameManager.ShowGameOver();
-        
         playerIsAlive = false;
+
+        myGameManager.ShowGameOver();
 
         GetComponent<SpriteRenderer>().enabled = false;
 
