@@ -265,11 +265,11 @@ public class Player : MonoBehaviour
 
     public void GameOver()
     {
+        myGameManager.isGameRunning = false;
+
         myGameManager.ShowGameOver();
         
         playerIsAlive = false;
-
-        myGameManager.isGameRunning = false;
 
         GetComponent<SpriteRenderer>().enabled = false;
 
@@ -336,7 +336,6 @@ public class Player : MonoBehaviour
     public void GameWon()
     {
         myGameManager.isGameRunning = false;
-
 
         int leftOverTime = (int)(myGameManager.totalGameTime - myGameManager.gameTimeRemaining);
 
