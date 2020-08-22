@@ -20,11 +20,11 @@ public class Turtle : MonoBehaviour
     public Sprite floatSprite; //Sprite for floating turtle
 
     public bool diving = false, surfacing = true, dived = false, surfaced = false;
-    private float surfaceTime = 5.0f;
-    private float diveTime = 5.0f;
+    private float surfaceTime = 5.0f; //how long the turtle will stay surfaced for
+    private float diveTime = 5.0f; //how long the turtle will remain under water
     private float surfaceTimer;
     private float diveTimer;
-    private float transitionTime = 5.0f;
+    private float transitionTime = 5.0f; //how long it takes the turtle to fully surface / dive
     private float transitionTimer;
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class Turtle : MonoBehaviour
     {
         if (turtleType == CurrentTurtle.CurrentTurtleDiving)
         {
-            if (surfacing == true)
+            if (surfacing == true) //is the turtle about to surface from the water? If so, change to surfaced sprite after x seconds
             {
                 transitionTimer += Time.deltaTime;
 
@@ -50,7 +50,7 @@ public class Turtle : MonoBehaviour
                 }
             }
 
-            if (surfaced == true)
+            if (surfaced == true) //if the turtle is currently surfaced then get ready to start its dive after x seconds
             {
                 surfaceTimer += Time.deltaTime;
 
@@ -63,7 +63,7 @@ public class Turtle : MonoBehaviour
                 }
             }
 
-            if (diving == true)
+            if (diving == true) //if the turtle is currently diving then get ready to make it disappear after x seconds
             {
                 transitionTimer += Time.deltaTime;
 
@@ -78,7 +78,7 @@ public class Turtle : MonoBehaviour
                 }
             }
 
-            if (dived == true)
+            if (dived == true) //if the turtle has currently dove underwater then get ready to make it begin surfacing after x seconds
             {
                 diveTimer += Time.deltaTime;
 

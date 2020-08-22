@@ -6,7 +6,8 @@ public class CollidableObject : MonoBehaviour
     {
     
     //Following code is from The Weekly Coder youtube channel, was unable to get OnCollisionEnter to do what I wanted for hopping on the logs
-    //and this piece of code seemed to be a good alternative without destroying the code I had already put in place
+    //and this piece of code seemed to be a good alternative without destroying the code I had already put in place. All declared variables after isSafe
+    //is my own logic and is placed there to be called by other scripts with my own spin on what I learned from this tutorial.
     
     Rect playerRect; //Collider for player
     Vector2 playerSize; //Size of the player sprite

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SafeObject : MonoBehaviour
 {
-    /*Following code is from The Weekly Coder youtube channel, where I also originally found the assets to use. I liked that it provided
-     a nice seamless looping of the logs as opposed to what I had set up for the vehicles (which also worked for this) */
+    //The following code used the idea from the Vehicle script but also incorporates ideas from the Weekly Coder to help with the seamless transition when the log enters / leaves the screen
 
     public float moveSpeed = 5.0f; // The speed at which the log travels
     public bool moveRight = true; //Is the log moving towards the right?
@@ -26,7 +25,7 @@ public class SafeObject : MonoBehaviour
         {
             pos.x += moveSpeed * Time.deltaTime;
 
-            if (pos.x >= ((playAreaWidth / 2) - 1) + (playAreaWidth - 1) - GetComponent<SpriteRenderer>().size.x / 2)
+            if (pos.x >= ((playAreaWidth / 2) - 1) + (playAreaWidth - 1) - GetComponent<SpriteRenderer>().size.x / 2) //if the log is moving right and has reached the determined space off screen then swap it back to its starting position
             {
                 pos.x = -playAreaWidth / 2 - GetComponent<SpriteRenderer>().size.x / 2;
             }
@@ -35,7 +34,7 @@ public class SafeObject : MonoBehaviour
         {
             pos.x -= moveSpeed * Time.deltaTime;
 
-            if (pos.x <= ((-playAreaWidth / 2) + 1) - (playAreaWidth - 1) + GetComponent<SpriteRenderer>().size.x / 2)
+            if (pos.x <= ((-playAreaWidth / 2) + 1) - (playAreaWidth - 1) + GetComponent<SpriteRenderer>().size.x / 2)//if the log is moving left and has reached the determined space off screen then swap it back to its starting position
             {
                 pos.x = playAreaWidth / 2 + GetComponent<SpriteRenderer>().size.x / 2;
             }
